@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>SpellWise - Intelligent Spell Checker</title>
+
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+<div class="background-glow glow-one"></div>
+<div class="background-glow glow-two"></div>
+
+<div class="app">
+
+    <!-- HEADER -->
+
+    <header class="header">
+
+        <div class="brand">
+
+            <div class="logo">
+                ✨
+            </div>
+
+            <div>
+                <h1>SpellWise</h1>
+
+                <p>
+                    Intelligent Spell Checker
+                </p>
+            </div>
+
+        </div>
+
+        <div class="header-badge">
+            DSA • Dynamic Programming
+        </div>
+
+    </header>
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div>
+
+            <span class="small-label">
+                LEVENSHTEIN EDIT DISTANCE
+            </span>
+
+            <h2>
+                Write. Check.
+                <span>Correct.</span>
+            </h2>
+
+            <p>
+                Find spelling mistakes and get intelligent
+                suggestions using Levenshtein Edit Distance.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- MAIN GRID -->
+
+    <main class="main-grid">
+
+        <!-- EDITOR CARD -->
+
+        <section class="editor-card">
+
+            <div class="card-header">
+
+                <div>
+
+                    <h3>
+                        ✍️ Write your text
+                    </h3>
+
+                    <p>
+                        Enter a word, sentence or paragraph.
+                    </p>
+
+                </div>
+
+                <select id="language">
+
+                    <option value="en">
+                        🇬🇧 English
+                    </option>
+
+                    <option value="hi">
+                        🇮🇳 Hindi
+                    </option>
+
+                    <option value="te">
+                        🇮🇳 Telugu
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div
+                id="editor"
+                class="editor"
+                contenteditable="true"
+                spellcheck="false"
+                data-placeholder="Start typing here..."
+            ></div>
+
+
+            <div class="editor-footer">
+
+                <span>
+                    Words:
+                    <strong id="wordCount">0</strong>
+                </span>
+
+                <div class="buttons">
+
+                    <button
+                        id="clearBtn"
+                        class="clear-btn"
+                    >
+                        🗑️ Clear
+                    </button>
+
+                    <button
+                        id="checkBtn"
+                        class="check-btn"
+                    >
+                        🔍 Check Spelling
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- RESULT CARD -->
+
+        <section class="result-card">
+
+            <div class="result-header">
+
+                <div>
+
+                    <span class="small-label">
+                        ANALYSIS
+                    </span>
+
+                    <h3>
+                        Results
+                    </h3>
+
+                </div>
+
+                <div class="error-counter">
+
+                    <span id="errorCount">
+                        0
+                    </span>
+
+                    <small>
+                        Errors
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="resultList"
+                class="result-list"
+            >
+
+                <div class="empty-message">
+
+                    Enter text and click
+                    <b>Check Spelling</b>.
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- INFO SECTION -->
+
+    <section class="info-section">
+
+        <div class="info-box">
+
+            <div class="info-icon">
+                🧠
+            </div>
+
+            <div>
+
+                <h3>
+                    How it works
+                </h3>
+
+                <p>
+                    Each word is compared with dictionary
+                    words using Levenshtein Edit Distance.
+                    The closest words are ranked and displayed
+                    as suggestions.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="info-box">
+
+            <div class="info-icon">
+                ⚡
+            </div>
+
+            <div>
+
+                <h3>
+                    Smart Suggestions
+                </h3>
+
+                <p>
+                    Suggestions with an edit distance of
+                    up to 3 are displayed. Click an incorrect
+                    word to choose a correction.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="info-box">
+
+            <div class="info-icon">
+                🌐
+            </div>
+
+            <div>
+
+                <h3>
+                    Multiple Languages
+                </h3>
+
+                <p>
+                    Supports English, Hindi and Telugu
+                    dictionaries using Unicode text processing.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            Intelligent Spell Checker
+            <span>•</span>
+            Java + HTML + CSS + JavaScript
+            <span>•</span>
+            Levenshtein Edit Distance
+        </p>
+
+    </footer>
+
+</div>
+
+
+<!-- SUGGESTION POPUP -->
+
+<div
+    id="suggestionPopup"
+    class="suggestion-popup"
+></div>
+
+
+<script src="/script.js"></script>
+
+</body>
+
+</html>
